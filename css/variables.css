@@ -1,0 +1,155 @@
+/**
+ * Grupo Pacheco (Corporación Domingo Savio)
+ * Sistema de Diseño, Tokens CSS y Soporte de Modo Claro / Modo Oscuro
+ */
+
+:root {
+  /* ================= MODO CLARO (LIGHT THEME - PREDETERMINADO) ================= */
+  --color-primary: #009B8E;          /* Verde Esmeralda / Teal Oficial */
+  --color-primary-hover: #008176;
+  --color-primary-dark: #00655c;
+  --color-primary-light: #00D1C1;    /* Menta Luminoso */
+  --color-primary-subtle: rgba(0, 155, 142, 0.08);
+  --color-primary-glow: rgba(0, 155, 142, 0.28);
+
+  --color-secondary: #24282B;        /* Grafito Antracita */
+  --color-secondary-alt: #2C2C2C;
+  --color-secondary-light: #3D4448;
+  --color-secondary-subtle: rgba(36, 40, 43, 0.05);
+
+  --color-accent-mint: #00D1C1;      /* Menta Luminoso */
+  --color-accent-gold: #F2A93B;      /* Acento Dorado Recreativo */
+  --color-accent-blue: #0078D4;      /* Microsoft / SharePoint Blue */
+
+  /* Estados y Alertas */
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-danger: #EF4444;
+  --color-info: #0284C7;
+
+  /* Superficies Modo Claro */
+  --bg-page: #F4F6F8;                /* Gris Claro Corporativo */
+  --bg-surface: #FFFFFF;
+  --bg-surface-elevated: #FFFFFF;
+  --bg-surface-glass: rgba(255, 255, 255, 0.90);
+  --bg-surface-glass-dark: rgba(36, 40, 43, 0.94);
+  --bg-muted: #EBF0F4;
+  --bg-card: #FFFFFF;
+  --bg-input: #FFFFFF;
+  --bg-header: rgba(255, 255, 255, 0.92);
+
+  /* Textos Modo Claro */
+  --text-main: #1C2329;
+  --text-muted: #5F6B76;
+  --text-light: #8C9BA5;
+  --text-white: #FFFFFF;
+  --text-on-primary: #FFFFFF;
+
+  /* Bordes Modo Claro */
+  --border-light: #E2E8F0;
+  --border-subtle: #EDF2F7;
+  --border-focus: #009B8E;
+  --border-glass: rgba(255, 255, 255, 0.35);
+
+  /* Sombras Modo Claro */
+  --shadow-xs: 0 1px 2px rgba(28, 35, 41, 0.05);
+  --shadow-sm: 0 2px 4px rgba(28, 35, 41, 0.06), 0 1px 2px rgba(28, 35, 41, 0.04);
+  --shadow-md: 0 4px 12px rgba(28, 35, 41, 0.08), 0 2px 4px rgba(28, 35, 41, 0.04);
+  --shadow-lg: 0 12px 24px -4px rgba(28, 35, 41, 0.1), 0 4px 8px -2px rgba(28, 35, 41, 0.04);
+  --shadow-xl: 0 24px 38px -6px rgba(28, 35, 41, 0.14), 0 12px 16px -4px rgba(28, 35, 41, 0.06);
+  --shadow-glow: 0 8px 30px rgba(0, 155, 142, 0.28);
+
+  /* Tipografía */
+  --font-family-sans: 'Montserrat', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-family-heading: 'Montserrat', 'Segoe UI', sans-serif;
+  --font-family-mono: 'JetBrains Mono', Consolas, monospace;
+
+  /* Espaciado */
+  --spacing-2xs: 0.25rem; /* 4px */
+  --spacing-xs: 0.5rem;   /* 8px */
+  --spacing-sm: 0.75rem;  /* 12px */
+  --spacing-md: 1rem;     /* 16px */
+  --spacing-lg: 1.5rem;   /* 24px */
+  --spacing-xl: 2rem;     /* 32px */
+  --spacing-2xl: 3rem;    /* 48px */
+  --spacing-3xl: 4.5rem;  /* 72px */
+
+  /* Bordes Redondeados */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 26px;
+  --radius-full: 9999px;
+
+  /* Transiciones */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Dimensiones del Layout */
+  --container-max: 1240px;
+  --header-height: 78px;
+  --drawer-width: 480px;
+
+  /* Indicadores de Modo */
+  --theme-toggle-bg: #E2E8F0;
+  --theme-toggle-indicator: #009B8E;
+  --theme-toggle-text: #24282B;
+}
+
+/* ================= MODO OSCURO (DARK THEME) ================= */
+[data-theme="dark"] {
+  --color-primary: #00D1C1;          /* Menta Luminoso de alto contraste */
+  --color-primary-hover: #00BAAA;
+  --color-primary-dark: #009B8E;
+  --color-primary-light: #4DE2D5;
+  --color-primary-subtle: rgba(0, 209, 193, 0.12);
+  --color-primary-glow: rgba(0, 209, 193, 0.35);
+
+  --color-secondary: #0D1117;        /* Deep Obsidian */
+  --color-secondary-alt: #161B22;
+  --color-secondary-light: #21262D;
+  --color-secondary-subtle: rgba(255, 255, 255, 0.05);
+
+  --color-accent-mint: #00D1C1;
+  --color-accent-gold: #F59E0B;
+  --color-accent-blue: #38BDF8;
+
+  /* Superficies Modo Oscuro */
+  --bg-page: #0B0E13;                /* Fondo principal oscuro */
+  --bg-surface: #141920;             /* Superficie de tarjetas */
+  --bg-surface-elevated: #1B222C;
+  --bg-surface-glass: rgba(20, 25, 32, 0.90);
+  --bg-surface-glass-dark: rgba(11, 14, 19, 0.95);
+  --bg-muted: #1B222C;
+  --bg-card: #141920;
+  --bg-input: #0B0E13;
+  --bg-header: rgba(15, 20, 26, 0.92);
+
+  /* Textos Modo Oscuro */
+  --text-main: #F0F6FC;              /* Texto principal brillante */
+  --text-muted: #94A3B8;             /* Texto secundario claro */
+  --text-light: #64748B;
+  --text-white: #FFFFFF;
+  --text-on-primary: #0B0E13;
+
+  /* Bordes Modo Oscuro */
+  --border-light: rgba(240, 246, 252, 0.12);
+  --border-subtle: rgba(240, 246, 252, 0.07);
+  --border-focus: #00D1C1;
+  --border-glass: rgba(255, 255, 255, 0.12);
+
+  /* Sombras Modo Oscuro */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.6), 0 2px 4px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 14px 28px -4px rgba(0, 0, 0, 0.7), 0 4px 10px -2px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 24px 44px -6px rgba(0, 0, 0, 0.85);
+  --shadow-glow: 0 8px 32px rgba(0, 209, 193, 0.35);
+
+  /* Toggle Indicator */
+  --theme-toggle-bg: #21262D;
+  --theme-toggle-indicator: #00D1C1;
+  --theme-toggle-text: #F0F6FC;
+}

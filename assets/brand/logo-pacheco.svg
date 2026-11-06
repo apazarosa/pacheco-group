@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 160" width="460" height="160" fill="none">
+  <defs>
+    <style>
+      .ring-dark { stroke: #2D3748; stroke-width: 14; stroke-linejoin: round; stroke-linecap: round; fill: none; }
+      .ring-teal { stroke: #009B8E; stroke-width: 14; stroke-linejoin: round; stroke-linecap: round; fill: none; }
+      .brand-txt { font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 900; font-size: 38px; letter-spacing: 4px; }
+      .txt-grupo { fill: #2D3748; }
+      .txt-pacheco { fill: #009B8E; }
+    </style>
+    <clipPath id="weave-1-2">
+      <rect x="170" y="5" width="40" height="50"/>
+    </clipPath>
+    <clipPath id="weave-2-3">
+      <rect x="230" y="45" width="40" height="50"/>
+    </clipPath>
+    <clipPath id="weave-3-4">
+      <rect x="290" y="5" width="40" height="50"/>
+    </clipPath>
+  </defs>
+
+  <!-- 4 Rombos Entrelazados Grupo Pacheco -->
+  <g id="chain-rings">
+    <!-- Rombo 1 (Gris Grafito) -->
+    <path d="M 140 10 L 180 50 L 140 90 L 100 50 Z" class="ring-dark" />
+    <!-- Rombo 2 (Teal Oficial) -->
+    <path d="M 200 10 L 240 50 L 200 90 L 160 50 Z" class="ring-teal" />
+    <!-- Rombo 3 (Gris Grafito) -->
+    <path d="M 260 10 L 300 50 L 260 90 L 220 50 Z" class="ring-dark" />
+    <!-- Rombo 4 (Teal Oficial) -->
+    <path d="M 320 10 L 360 50 L 320 90 L 280 50 Z" class="ring-teal" />
+
+    <!-- Entrelazado auténtico (Over/Under) -->
+    <path d="M 140 10 L 180 50 L 140 90 L 100 50 Z" class="ring-dark" clip-path="url(#weave-1-2)" />
+    <path d="M 260 10 L 300 50 L 260 90 L 220 50 Z" class="ring-dark" clip-path="url(#weave-2-3)" />
+    <path d="M 320 10 L 360 50 L 320 90 L 280 50 Z" class="ring-teal" clip-path="url(#weave-3-4)" />
+  </g>
+
+  <!-- Tipografía Oficial Centrada -->
+  <text x="230" y="142" text-anchor="middle" class="brand-txt">
+    <tspan class="txt-grupo">GRUPO </tspan><tspan class="txt-pacheco">PACHECO</tspan>
+  </text>
+</svg>

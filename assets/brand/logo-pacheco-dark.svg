@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 160" width="460" height="160" fill="none">
+  <defs>
+    <style>
+      .ring-white { stroke: #FFFFFF; stroke-width: 14; stroke-linejoin: round; stroke-linecap: round; fill: none; }
+      .ring-mint { stroke: #00D1C1; stroke-width: 14; stroke-linejoin: round; stroke-linecap: round; fill: none; }
+      .brand-txt-dark { font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 900; font-size: 38px; letter-spacing: 4px; }
+      .txt-grupo-white { fill: #FFFFFF; }
+      .txt-pacheco-mint { fill: #00D1C1; }
+    </style>
+    <clipPath id="weave-dark-1-2">
+      <rect x="170" y="5" width="40" height="50"/>
+    </clipPath>
+    <clipPath id="weave-dark-2-3">
+      <rect x="230" y="45" width="40" height="50"/>
+    </clipPath>
+    <clipPath id="weave-dark-3-4">
+      <rect x="290" y="5" width="40" height="50"/>
+    </clipPath>
+  </defs>
+
+  <!-- 4 Rombos Entrelazados Grupo Pacheco - Modo Oscuro -->
+  <g id="chain-rings-dark">
+    <!-- Rombo 1 (Blanco) -->
+    <path d="M 140 10 L 180 50 L 140 90 L 100 50 Z" class="ring-white" />
+    <!-- Rombo 2 (Menta Cyan) -->
+    <path d="M 200 10 L 240 50 L 200 90 L 160 50 Z" class="ring-mint" />
+    <!-- Rombo 3 (Blanco) -->
+    <path d="M 260 10 L 300 50 L 260 90 L 220 50 Z" class="ring-white" />
+    <!-- Rombo 4 (Menta Cyan) -->
+    <path d="M 320 10 L 360 50 L 320 90 L 280 50 Z" class="ring-mint" />
+
+    <!-- Entrelazado auténtico (Over/Under) -->
+    <path d="M 140 10 L 180 50 L 140 90 L 100 50 Z" class="ring-white" clip-path="url(#weave-dark-1-2)" />
+    <path d="M 260 10 L 300 50 L 260 90 L 220 50 Z" class="ring-white" clip-path="url(#weave-dark-2-3)" />
+    <path d="M 320 10 L 360 50 L 320 90 L 280 50 Z" class="ring-mint" clip-path="url(#weave-dark-3-4)" />
+  </g>
+
+  <!-- Tipografía Oficial Centrada en Modo Oscuro -->
+  <text x="230" y="142" text-anchor="middle" class="brand-txt-dark">
+    <tspan class="txt-grupo-white">GRUPO </tspan><tspan class="txt-pacheco-mint">PACHECO</tspan>
+  </text>
+</svg>

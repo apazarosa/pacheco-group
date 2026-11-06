@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin CMS | Grupo Pacheco - Gestión de Contenidos</title>
+  <link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+  <!-- Barra Lateral (Sidebar) -->
+  <aside class="admin-sidebar" id="admin-sidebar">
+    <div class="admin-sidebar-header">
+      <div class="admin-brand-wrap">
+        <img src="assets/brand/logo-pacheco-dark.svg" alt="Grupo Pacheco Logo" style="height: 38px; width: auto;">
+        <div class="admin-brand-info">
+          <h2>GRUPO PACHECO</h2>
+          <span>PANEL CMS LOCAL</span>
+        </div>
+      </div>
+    </div>
+
+    <nav class="admin-nav">
+      <button type="button" class="admin-nav-item active" data-tab="tab-resumen">
+        <i class="ri-dashboard-line"></i>
+        <span>Resumen General</span>
+      </button>
+      <button type="button" class="admin-nav-item" data-tab="tab-unidades">
+        <i class="ri-building-line"></i>
+        <span>Unidades de Negocio</span>
+      </button>
+      <button type="button" class="admin-nav-item" data-tab="tab-sedes">
+        <i class="ri-map-pin-line"></i>
+        <span>Sedes & Mapa</span>
+      </button>
+      <button type="button" class="admin-nav-item" data-tab="tab-accesos">
+        <i class="ri-links-line"></i>
+        <span>Accesos Directos</span>
+      </button>
+      <button type="button" class="admin-nav-item" data-tab="tab-directivos">
+        <i class="ri-user-star-line"></i>
+        <span>Directorio & Equipo</span>
+      </button>
+      <button type="button" class="admin-nav-item" data-tab="tab-empresa">
+        <i class="ri-settings-4-line"></i>
+        <span>Datos Institucionales</span>
+      </button>
+      <button type="button" class="admin-nav-item" data-tab="tab-backup">
+        <i class="ri-database-2-line"></i>
+        <span>Backup & Restauración</span>
+      </button>
+    </nav>
+
+    <div class="admin-sidebar-footer">
+      <a href="index.html" class="link-public-web" target="_blank">
+        <i class="ri-external-link-line"></i> Ver Landing Pública
+      </a>
+    </div>
+  </aside>
+
+  <!-- Área Principal de Trabajo -->
+  <main class="admin-main">
+    <!-- Barra Superior -->
+    <header class="admin-topbar">
+      <div class="admin-page-title">
+        <h1 id="admin-page-title">Resumen General</h1>
+        <p>Administración y actualización en tiempo real de contenidos corporativos</p>
+      </div>
+
+      <div class="admin-topbar-actions">
+        <div class="live-badge">
+          <span>Persistencia Local Activa</span>
+        </div>
+        <a href="index.html" class="btn btn-outline btn-sm">
+          <i class="ri-eye-line"></i> Vista Previa
+        </a>
+      </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <div class="admin-content">
+      
+      <!-- PESTAÑA 1: RESUMEN GENERAL -->
+      <section id="tab-resumen" class="tab-view">
+        <!-- Indicadores Rápidos -->
+        <div class="admin-kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-icon"><i class="ri-briefcase-4-line"></i></div>
+            <div class="kpi-info">
+              <h3 id="kpi-unidades">0</h3>
+              <p>Unidades de Negocio</p>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon"><i class="ri-map-pin-range-line"></i></div>
+            <div class="kpi-info">
+              <h3 id="kpi-sedes">0</h3>
+              <p>Sedes Registradas</p>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon"><i class="ri-apps-line"></i></div>
+            <div class="kpi-info">
+              <h3 id="kpi-accesos">0</h3>
+              <p>Accesos & Sistemas</p>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon"><i class="ri-team-line"></i></div>
+            <div class="kpi-info">
+              <h3 id="kpi-directivos">0</h3>
+              <p>Directivos Clave</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h2>Bienvenido al Gestor de Contenido de Grupo Pacheco</h2>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.25rem;">
+            Desde este panel de control puede modificar, crear y eliminar la información corporativa que se despliega en la landing pública de Grupo Pacheco (index.html). Todas las modificaciones se guardan instantáneamente en su navegador mediante almacenamiento local (LocalStorage).
+          </p>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
+            <div style="background: #F8FAFC; border: 1px solid var(--border-light); padding: 16px; border-radius: var(--radius-md);">
+              <h4 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 6px;"><i class="ri-lightbulb-line" style="color: var(--accent-gold);"></i> Mapa Interactivo</h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">
+                Cada sede agregada o modificada en la pestaña "Sedes & Mapa" se enlaza directamente a su respectivo departamento en el mapa SVG de Bolivia.
+              </p>
+            </div>
+
+            <div style="background: #F8FAFC; border: 1px solid var(--border-light); padding: 16px; border-radius: var(--radius-md);">
+              <h4 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 6px;"><i class="ri-shield-keyhole-line" style="color: var(--primary);"></i> Enlaces Internos</h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">
+                Gestione las URLs hacia Microsoft 365, SAP ERP, SAADS y la Intranet para que sus colaboradores puedan ingresar directamente.
+              </p>
+            </div>
+
+            <div style="background: #F8FAFC; border: 1px solid var(--border-light); padding: 16px; border-radius: var(--radius-md);">
+              <h4 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 6px;"><i class="ri-file-download-line" style="color: var(--info);"></i> Seguridad de Datos</h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">
+                Puede descargar un archivo de copia de seguridad (JSON) en la pestaña "Backup" para respaldar sus cambios o llevarlos a otro dispositivo.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PESTAÑA 2: UNIDADES DE NEGOCIO -->
+      <section id="tab-unidades" class="tab-view" style="display: none;">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h2>Gestión de Unidades Estratégicas</h2>
+            <button type="button" class="btn btn-primary btn-sm" onclick="AdminApp.openCreateModal('unidad')">
+              <i class="ri-add-line"></i> Nueva Unidad
+            </button>
+          </div>
+          
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th style="width: 50px;">Ícono</th>
+                  <th>Nombre Comercial</th>
+                  <th>Sector</th>
+                  <th>Insignia</th>
+                  <th>Descripción</th>
+                  <th style="width: 100px;">Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-unidades">
+                <!-- Filas renderizadas por admin.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- PESTAÑA 3: SEDES & MAPA -->
+      <section id="tab-sedes" class="tab-view" style="display: none;">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h2>Sedes & Cobertura en Bolivia</h2>
+            <button type="button" class="btn btn-primary btn-sm" onclick="AdminApp.openCreateModal('sede')">
+              <i class="ri-add-line"></i> Nueva Sede
+            </button>
+          </div>
+
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Departamento</th>
+                  <th>Nombre de Sede</th>
+                  <th>Tipo</th>
+                  <th>Teléfono</th>
+                  <th>Dirección</th>
+                  <th style="width: 100px;">Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-sedes">
+                <!-- Filas renderizadas por admin.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- PESTAÑA 4: ACCESOS DIRECTOS -->
+      <section id="tab-accesos" class="tab-view" style="display: none;">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h2>Plataformas y Accesos Rápidos (Portal Interno)</h2>
+            <button type="button" class="btn btn-primary btn-sm" onclick="AdminApp.openCreateModal('acceso')">
+              <i class="ri-add-line"></i> Nuevo Acceso
+            </button>
+          </div>
+
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th style="width: 50px;">Ícono</th>
+                  <th>Herramienta / Sistema</th>
+                  <th>Categoría</th>
+                  <th>URL de Destino</th>
+                  <th>Estado</th>
+                  <th style="width: 100px;">Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-accesos">
+                <!-- Filas renderizadas por admin.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- PESTAÑA 5: DIRECTIVOS -->
+      <section id="tab-directivos" class="tab-view" style="display: none;">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h2>Directorio y Liderazgo Institucional</h2>
+            <button type="button" class="btn btn-primary btn-sm" onclick="AdminApp.openCreateModal('directivo')">
+              <i class="ri-add-line"></i> Nuevo Directivo
+            </button>
+          </div>
+
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th style="width: 50px;">Foto</th>
+                  <th>Nombre y Apellido</th>
+                  <th>Cargo Institucional</th>
+                  <th>Rol</th>
+                  <th style="width: 100px;">Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-directivos">
+                <!-- Filas renderizadas por admin.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- PESTAÑA 6: EMPRESA & DATOS INSTITUCIONALES -->
+      <section id="tab-empresa" class="tab-view" style="display: none;">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h2>Información Institucional & Contacto</h2>
+          </div>
+
+          <form id="form-empresa">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+              <div class="form-group">
+                <label class="form-label">Nombre del Grupo Empresarial</label>
+                <input type="text" id="empresa-nombre" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Subtítulo Corporativo</label>
+                <input type="text" id="empresa-subtitulo" class="form-control" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Lema / Slogan</label>
+              <input type="text" id="empresa-lema" class="form-control" required>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+              <div class="form-group">
+                <label class="form-label">Teléfono Central</label>
+                <input type="text" id="empresa-telefono" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Correo Electrónico</label>
+                <input type="email" id="empresa-email" class="form-control" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Dirección de Casa Matriz</label>
+              <input type="text" id="empresa-direccion" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Misión Institucional</label>
+              <textarea id="empresa-mision" class="form-control" rows="3" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Visión Institucional</label>
+              <textarea id="empresa-vision" class="form-control" rows="3" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+              <i class="ri-save-line"></i> Guardar Información Institucional
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- PESTAÑA 7: BACKUP & RESTAURACIÓN -->
+      <section id="tab-backup" class="tab-view" style="display: none;">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h2>Copia de Seguridad y Restauración de Datos</h2>
+          </div>
+
+          <div class="backup-grid">
+            <div class="backup-card">
+              <div style="font-size: 2.2rem; color: var(--primary); margin-bottom: 8px;"><i class="ri-file-download-line"></i></div>
+              <h3>Exportar Respaldo</h3>
+              <p>Descargue un archivo JSON con toda la configuración, sedes, unidades y directivos actuales.</p>
+              <button type="button" id="btn-export-json" class="btn btn-primary btn-sm" style="width: 100%;">
+                <i class="ri-download-2-line"></i> Descargar JSON
+              </button>
+            </div>
+
+            <div class="backup-card">
+              <div style="font-size: 2.2rem; color: var(--accent-gold); margin-bottom: 8px;"><i class="ri-file-upload-line"></i></div>
+              <h3>Importar Respaldo</h3>
+              <p>Cargue un archivo JSON previamente exportado para restaurar los datos en esta máquina.</p>
+              <label class="btn btn-outline btn-sm" style="width: 100%; cursor: pointer;">
+                <i class="ri-upload-2-line"></i> Seleccionar JSON
+                <input type="file" id="input-import-json" accept=".json" style="display: none;">
+              </label>
+            </div>
+
+            <div class="backup-card">
+              <div style="font-size: 2.2rem; color: var(--danger); margin-bottom: 8px;"><i class="ri-refresh-line"></i></div>
+              <h3>Restablecer de Fábrica</h3>
+              <p>Vuelve a cargar la configuración predeterminada de Grupo Pacheco con los 9 departamentos.</p>
+              <button type="button" id="btn-reset-defaults" class="btn btn-outline btn-sm" style="width: 100%; border-color: var(--danger); color: var(--danger);">
+                <i class="ri-restart-line"></i> Restablecer Valores
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Modal Genérico de Formulario (Creación y Edición) -->
+  <div class="modal-overlay" id="admin-modal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 id="modal-title">Editar Elemento</h3>
+        <button type="button" class="modal-close" id="modal-close-btn">&times;</button>
+      </div>
+      <form id="modal-form" class="modal-body">
+        <!-- Campos generados dinámicamente según la entidad -->
+      </form>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline btn-sm" id="modal-cancel-btn">Cancelar</button>
+        <button type="submit" form="modal-form" class="btn btn-primary btn-sm">Guardar Cambios</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/store.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
+

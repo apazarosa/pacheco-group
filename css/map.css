@@ -1,0 +1,294 @@
+/**
+ * Grupo Pacheco - Estilos del Mapa Interactivo de Bolivia
+ */
+
+.map-section-wrapper {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-lg);
+  padding: var(--spacing-xl);
+  overflow: hidden;
+  position: relative;
+}
+
+.map-interactive-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+@media (max-width: 992px) {
+  .map-interactive-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Contenedor del Mapa SVG */
+.map-canvas-container {
+  position: relative;
+  background: radial-gradient(circle at 50% 50%, rgba(0, 155, 142, 0.04) 0%, transparent 70%);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 480px;
+}
+
+.bolivia-svg-map {
+  width: 100%;
+  max-width: 540px;
+  height: auto;
+  filter: drop-shadow(0 12px 24px rgba(30, 41, 59, 0.08));
+  user-select: none;
+}
+
+/* Departamentos SVG */
+.dept-path {
+  fill: #E2E8F0;
+  stroke: #FFFFFF;
+  stroke-width: 1.8;
+  stroke-linejoin: round;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.dept-path:hover {
+  fill: #00C4B4;
+  filter: drop-shadow(0 0 8px rgba(0, 196, 180, 0.45));
+}
+
+.dept-path.has-sede {
+  fill: #CBD5E1;
+}
+
+.dept-path.has-sede:hover {
+  fill: #009B8E;
+}
+
+.dept-path.active {
+  fill: var(--primary) !important;
+  filter: drop-shadow(0 0 12px rgba(0, 155, 142, 0.6));
+}
+
+.dept-label {
+  font-family: var(--font-primary);
+  font-size: 11px;
+  font-weight: 700;
+  fill: #475569;
+  pointer-events: none;
+  text-anchor: middle;
+  transition: fill var(--transition-fast);
+}
+
+.dept-path.active + .dept-label,
+.dept-path:hover + .dept-label {
+  fill: #FFFFFF;
+}
+
+/* Marcadores / Pines de Sede */
+.sede-pin {
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+}
+
+.sede-pin:hover {
+  transform: scale(1.25);
+}
+
+.sede-pin circle.pin-dot {
+  fill: var(--secondary);
+  stroke: #FFFFFF;
+  stroke-width: 2;
+}
+
+.sede-pin.active circle.pin-dot {
+  fill: var(--accent-gold);
+}
+
+.sede-pin .pin-pulse {
+  animation: pulse-marker 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+  transform-origin: center;
+}
+
+@keyframes pulse-marker {
+  0% {
+    r: 6;
+    opacity: 0.8;
+  }
+  50% {
+    r: 15;
+    opacity: 0.15;
+  }
+  100% {
+    r: 20;
+    opacity: 0;
+  }
+}
+
+/* Tooltip Flotante */
+.map-tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: var(--secondary);
+  color: #FFFFFF;
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  box-shadow: var(--shadow-md);
+  border-left: 3px solid var(--primary);
+  z-index: 50;
+  opacity: 0;
+  transform: translate(-50%, -120%);
+  transition: opacity 120ms ease, transform 120ms ease;
+  white-space: nowrap;
+}
+
+.map-tooltip.visible {
+  opacity: 1;
+  transform: translate(-50%, -135%);
+}
+
+/* Selector Rápido de Departamentos (Chips) */
+.dept-chips-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: var(--spacing-lg);
+}
+
+.dept-chip {
+  padding: 6px 14px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-full);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.dept-chip:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: var(--primary-subtle);
+}
+
+.dept-chip.active {
+  background: var(--primary);
+  color: #FFFFFF;
+  border-color: var(--primary);
+  box-shadow: 0 4px 10px rgba(0, 155, 142, 0.25);
+}
+
+/* Panel Lateral de Detalle de Sede */
+.sede-detail-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.sede-detail-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--accent-gold) 100%);
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
+}
+
+.sede-badge-type {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: var(--primary-subtle);
+  color: var(--primary);
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--spacing-sm);
+}
+
+.sede-card-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.sede-card-dept {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sede-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+}
+
+.sede-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.sede-info-item i {
+  color: var(--primary);
+  font-size: 1.1rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.sede-info-item strong {
+  color: var(--text-main);
+}
+
+.sede-units-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.sede-unit-tag {
+  background: var(--bg-muted);
+  color: var(--secondary);
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-light);
+}
+
+.sede-contact-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--border-light);
+}
+

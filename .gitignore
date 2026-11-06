@@ -1,0 +1,6 @@
+# Antigravity Scratch & Logs
+scratch/
+.system_generated/
+*.tmp
+.DS_Store
+Thumbs.db
